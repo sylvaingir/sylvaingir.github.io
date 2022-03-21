@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+      <script lang="text/javascript">
+          var h, m, s =0;
+          var urlParams  = new URLSearchParams(window.location.search);
+          var today = new Date(Date.now());
+          function getTimeVal(param, mod){
+            return (urlParams.get(param) * 1) % mod
+          }
+          h = getTimeVal('h', 24);
+          m = getTimeVal('m', 60);
+          s = getTimeVal('s', 60);
+          var utc = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate(), h, m, s))
+          console.log(utc)
+      </script>
+  </body>
+</html>
